@@ -26,7 +26,7 @@ class AddChannelToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('channnel');
+            $table->dropColumn('channel');
         });
     }
 }
