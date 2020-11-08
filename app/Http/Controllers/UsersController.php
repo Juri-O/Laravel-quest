@@ -35,7 +35,7 @@ class UsersController extends Controller
     public function rename(Request $request)
     {
         $this->validate($request,[
-            'channnel' => 'required|max:15',
+            'channel' => 'required|max:15',
             'name' => 'required|max:15',
             
         ]);
@@ -43,7 +43,7 @@ class UsersController extends Controller
         $user=\Auth::user();
         $movies = $user->movies()->orderBy('id', 'desc')->paginate(9);
         
-        $user->channnel = $request->channnel;
+        $user->channel = $request->channel;
         $user->name = $request->name;
         $user->save();
         
